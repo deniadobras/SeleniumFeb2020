@@ -13,5 +13,5 @@ class HomePage(BasePage):
 
     def getWelcomeMessage(self, welcometext):
         WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(welcometext))
-        welcome_element_text = self.driver.find_element(*welcometext).replace('\n', ' ')
-        return welcome_element_text.text
+        welcome_element_text = self.driver.find_element(*welcometext)
+        return welcome_element_text.text.replace("\n", " ")
